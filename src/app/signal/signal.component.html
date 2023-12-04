@@ -1,0 +1,70 @@
+<div class="base-container">
+  <div class="title">Signal APIs</div>
+
+  <!-- title -->
+  <div [ngClass]="titleClassName" (click)="toggleTitleOpen()">
+    >
+  </div>
+  <div [ngClass]="titleSectionClassName">
+    <div class="title">1. Description</div>
+    <div class="description-container">
+      <div>
+        Before v16, the Angular change detection depends on NgZone.js. 
+        <b>NgZone</b> mutates the common events of the browser (<b>Monkey Patching</b>) for trigering the change detection. There are some downsides.
+      </div>
+      <ul>
+        <li>
+          The <b>await</b> and <b>async</b> will be converted to <b>Promise</b> even tough the browser already supported it 
+        </li>
+        <li>
+          In the <b>default</b> strategy, <b>NgZone</b> will check if there are any changes from the template expressions for all components of the component tree
+        </li>
+        <li>
+          In the <b>OnPush</b> strategy, <b>NgZone</b> will only check if there are changes of <b>immutable</b> or <b>observable</b> from the template expressions for components marked as dirty
+        </li>
+      </ul> 
+
+      <div>
+        In v16, Angular introduces the <b>Signal APIs</b> in order to release <b>NgZone</b> in the future. 
+        <a href="https://stackoverflow.com/questions/76793429/i-want-to-use-angular-signals-do-i-have-to-turn-of-zone-js">
+          (But the automatic CD is still controlled by NgZone now)
+        </a>
+        <div>
+          <b>Signal APIs</b> wil only refresh the view when the value of signal is changed. 
+        </div>
+      </div>
+    </div>
+  </div>
+    
+  <!-- content -->
+  <div [ngClass]="contentClassName" (click)="toggleContentOpen()">
+    >
+  </div>
+  <div class="title">2. Use Signal for CD</div>
+  <!-- reference -->
+  <div [ngClass]="referenceClassName" (click)="toggleReferenceOpen()">
+    >
+  </div>
+  <div [ngClass]="referenceSectionClassName">
+    <div class="title">2. Reference</div>
+    <div class="content-container">
+      <ul>
+        <li>
+          <a href="https://www.angulararchitects.io/blog/angular-signals/">
+            Signals in Angular: The Future of Change Detection
+          </a>
+        </li>
+        <li>
+          <a href="https://blog.angular-university.io/how-does-angular-2-change-detection-really-work/">
+            Angular Change Detection - How Does It Really Work?
+          </a>
+        </li>
+        <li>
+          <a href="https://medium.com/ngconf/future-of-change-detection-in-angular-with-signals-fb367b66a232">
+            Future of Change Detection in Angular with Signals
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
