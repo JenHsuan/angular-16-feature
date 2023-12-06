@@ -35,18 +35,38 @@
       </div>
     </div>
   </div>
-    
+  
+  <!-- demo -->
+  <div [ngClass]="demoClassName" (click)="toggleDemoOpen()">
+    >
+  </div>
+  <div [ngClass]="demoSectionClassName">
+    <div class="title">2. Demo</div>
+    <div class="description-container">
+      The following demo is a small tree. Only the child-2 have a counter and have to be refresh by NgZone.
+      <ul>
+        <li>Open the developer tool: we can realize which components will be detected changed</li>
+      </ul>
+    </div>
+    <div class="demo-container">
+      <div class="demo">
+        <app-signal-parent></app-signal-parent>
+      </div>
+    </div>  
+  </div>
+
   <!-- content -->
   <div [ngClass]="contentClassName" (click)="toggleContentOpen()">
     >
   </div>
-  <div class="title">2. Use Signal for CD</div>
+  <div class="title">3. Declare Signal for CD</div>
+  
   <!-- reference -->
   <div [ngClass]="referenceClassName" (click)="toggleReferenceOpen()">
     >
   </div>
   <div [ngClass]="referenceSectionClassName">
-    <div class="title">2. Reference</div>
+    <div class="title">4. Reference</div>
     <div class="content-container">
       <ul>
         <li>
