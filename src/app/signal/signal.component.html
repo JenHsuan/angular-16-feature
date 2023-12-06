@@ -43,14 +43,18 @@
   <div [ngClass]="demoSectionClassName">
     <div class="title">2. Demo</div>
     <div class="description-container">
-      The following demo is a small tree. Only the child-2 have a counter and have to be refresh by NgZone.
       <ul>
         <li>Open the developer tool: we can realize which components will be detected changed</li>
       </ul>
     </div>
     <div class="demo-container">
       <div class="demo">
-        <app-signal-parent></app-signal-parent>
+        <div class="node-title">root (default)</div>
+        <div class="content">
+          <app-signal-parent></app-signal-parent>
+          <app-push-parent></app-push-parent>
+          <app-default-parent></app-default-parent>
+        </div>
       </div>
     </div>  
   </div>

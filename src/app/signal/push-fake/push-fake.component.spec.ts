@@ -1,15 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import SignalComponent from './signal.component';
 
-describe('SignalComponent', () => {
-  let component: SignalComponent;
-  let fixture: ComponentFixture<SignalComponent>;
+import { PushFakeComponent } from './push-fake.component';
+
+describe('PushFakeComponent', () => {
+  let component: PushFakeComponent;
+  let fixture: ComponentFixture<PushFakeComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [SignalComponent]
+      imports: [PushFakeComponent]
     });
-    fixture = TestBed.createComponent(SignalComponent);
+    fixture = TestBed.createComponent(PushFakeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
