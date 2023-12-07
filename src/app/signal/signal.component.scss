@@ -1,7 +1,7 @@
 .demo-container {
   flex-direction: column;
   border: 1px solid red;
-  width: 41em;
+  width: 42em;
   justify-content: center;
   align-items: center;
   padding: .5em;
@@ -16,4 +16,9 @@
   .content {
     display: flex;
   }
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
 }

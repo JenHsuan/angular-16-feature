@@ -5,19 +5,22 @@ import { Router, RouterModule } from '@angular/router';
 enum ROUTE_TYPE {
   HOME = 'HOME', 
   NOTES = 'NOTES',
-  SIGNAL = 'SIGNAL'
+  SIGNAL = 'SIGNAL',
+  HYDRATION = 'HYDRATION'
 };
 
 const ROUTE_MAP = new Map<string, ROUTE_TYPE>([
   ['/home', ROUTE_TYPE.HOME],
   ['/notes', ROUTE_TYPE.NOTES],
-  ['/signal', ROUTE_TYPE.SIGNAL]
+  ['/signal', ROUTE_TYPE.SIGNAL],
+  ['/hydration', ROUTE_TYPE.HYDRATION]
 ]);
 
 const TYPE_TITLE_MAP = new Map<ROUTE_TYPE, string>([
   [ROUTE_TYPE.HOME, ''],
   [ROUTE_TYPE.NOTES, 'Notes'],
-  [ROUTE_TYPE.SIGNAL, 'Signal']
+  [ROUTE_TYPE.SIGNAL, 'Signal'],
+  [ROUTE_TYPE.HYDRATION, 'Hydration']
 ]);
 
 @Component({

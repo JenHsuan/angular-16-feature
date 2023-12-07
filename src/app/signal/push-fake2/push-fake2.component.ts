@@ -10,7 +10,7 @@ import { PushDemoComponent } from '../push-demo/push-demo.component';
     <div class="container">
       child 2 (OnPush)
       <button (click)="onClick()">
-        {{ num }}
+      count: {{ num }}
       </button>
       <app-push-demo [index]="num">
       </app-push-demo>

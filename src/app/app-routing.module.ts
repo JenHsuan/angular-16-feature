@@ -18,6 +18,11 @@ export const routes: Routes = [
     loadComponent: () => import('../app/signal/signal.component'),
     title: 'Angular 16 - signal'
   },
+  {
+    path: 'hydration',
+    loadComponent: () => import('../app/hydration/hydration.component'),
+    title: 'Angular 16 - hydrationl'
+  }
 ];
 
 @NgModule({

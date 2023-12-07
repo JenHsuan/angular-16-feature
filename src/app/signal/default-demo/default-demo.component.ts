@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
     <div class="container">
       <div>child 2-1 (default)</div>
       <button (click)="onClick()">
-        {{ num }}
+      count: {{ num }}
       </button>
     </div>`,
   styleUrls: ['./default-demo.component.scss']

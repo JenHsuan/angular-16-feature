@@ -1,5 +1,6 @@
-import { AfterContentChecked, AfterViewChecked, ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, NgZone, signal } from '@angular/core';
+import { Component, computed, effect, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { toObservable, toSignal } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-signal-demo',
@@ -8,23 +9,54 @@ import { CommonModule } from '@angular/common';
   template: `
     <div class="container">
       <div>child 2-1 (signal)</div>
-      <button (click)="onClick()">
-        {{ num() }}
+      <button (click)="onUpdateClick()">
+        count: {{ num() }}
       </button>
+      <button (click)="onResetClick()">
+        reset
+      </button>
+      <div class="formatted-num">
+        {{ formattedNum()}}
+      </div>
+      <div class="formatted-num">
+        observable: {{ num$ | async }}
+      </div>
     </div>`,
   styleUrls: ['./signal-demo.component.scss'],
-  //changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SignalDemoComponent {
+  //declare a writable signal
   num = signal(0);
-  //num2 = 0;
-  //@Input('index') index: number;
 
-  ngDoCheck(): void {
-    console.warn('child 2-1 CD (signal)')
+  //declare a read-only signal
+  formattedNum = computed(() => `computed: ${this.num()}`);
+
+  //update the signal value based on the current value
+  onUpdateClick() {
+    this.num.update(n => n += 1);
   }
 
-  onClick() {
-    this.num.update(n => n += 1);
+  //directly set signal to the new value
+  onResetClick() {
+    this.num.set(0);
+  }
+
+  //to Observable
+  num$ = toObservable(this.num);
+
+  //to signal
+  num2 = toSignal(this.num$);
+
+  //trace the signal value
+  //whenever any of these signal values change, the effect runs again
+  constructor() {
+    effect(() => {
+      console.info(`signal value: ${this.num()}`);
+    });
+  }
+
+  //Check if the CD happened
+  ngDoCheck(): void {
+    console.warn('child 2-1 CD (signal)')
   }
 }
