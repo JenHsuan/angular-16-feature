@@ -10,5 +10,21 @@ import { BaseComponent } from '../base/base.component';
   styleUrls: ['./hydration.component.scss']
 })
 export default class HydrationComponent extends BaseComponent {
-
+  step1 = `ng add @nguniversal/express-engine`;
+  step2 = `
+  bootstrapApplication(AppComponent, {
+    providers: [
+      provideClientHydration(),
+      ...
+    ],
+  });
+  `;
+  step3 = `
+  const serverConfig: ApplicationConfig = {
+    providers: [
+      provideClientHydration(),
+      ...
+    ]
+  };`;
+  step4 = `npm run dev:ssr`;
 }

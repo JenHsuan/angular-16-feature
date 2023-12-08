@@ -1,5 +1,6 @@
 import { CommonModule, Location } from '@angular/common';
 import { Component } from '@angular/core';
+import { provideClientHydration } from '@angular/platform-browser';
 import { Router, RouterModule } from '@angular/router';
 
 enum ROUTE_TYPE {
@@ -20,7 +21,7 @@ const TYPE_TITLE_MAP = new Map<ROUTE_TYPE, string>([
   [ROUTE_TYPE.HOME, ''],
   [ROUTE_TYPE.NOTES, 'Notes'],
   [ROUTE_TYPE.SIGNAL, 'Signal'],
-  [ROUTE_TYPE.HYDRATION, 'Non-destructive hydration']
+  [ROUTE_TYPE.HYDRATION, 'Non-destructive hydration (developer preview)']
 ]);
 
 @Component({
@@ -32,7 +33,7 @@ const TYPE_TITLE_MAP = new Map<ROUTE_TYPE, string>([
 })
 export class AppComponent {
   title = 'Notes of Angular v16';
-  updateTime = '2023/12/01';
+  updateTime = '2023/12/08';
   selectedRoute = ROUTE_TYPE.HOME;
   route: string;
   routeType = ROUTE_TYPE;

@@ -41,12 +41,74 @@
     </div>
   </div>
 
+  <!-- content -->
+  <div [ngClass]="contentClassName" (click)="toggleContentOpen()">
+    >
+  </div>
+  <div [ngClass]="contentSectionClassName">
+    <div class="title">2. How to use?</div>
+    <div class="description-container">
+      <div class="item">
+        There are steps to enable hydration.
+        <ol>
+          <li>
+            <div>Install Angular Universal: excute the following code and it will generate src/main.server.ts, src/app/app.config.server.ts, tsconfig.server.json, and server.ts</div>
+            <div>
+              <pre>
+                <code [innerHTML]="escapeHtml(step1)"></code>
+              </pre>
+            </div>
+          </li>
+          <li>
+            <div>Update the main.ts</div>
+            <div>
+              <pre>
+                <code [innerHTML]="escapeHtml(step2)"></code>
+              </pre>
+            </div>
+          </li>
+          <li>
+            <div>Update the src/app/app.config.server.ts</div>
+            <div>
+              <pre>
+                <code [innerHTML]="escapeHtml(step3)"></code>
+              </pre>
+            </div>
+          </li>
+          <li>
+            <div>Execute the SSR dev server</div>
+            <div>
+              <pre>
+                <code [innerHTML]="escapeHtml(step4)"></code>
+              </pre>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+    <div class="title">3. Analysis</div>
+    <div class="description-container">
+      <div class="item">
+        <div>When the SSR server starts, the static files will be built in the dist folder</div>
+        <img src="../../assets/image/hydration_ssr_servr.png" alt="">
+      </div>
+      <div class="item">
+        <div>There are two things different when inspecting the page</div>
+        <ol>
+          <li>The browser-sync-client in inserted into the HTML for syncing changes</li>
+          <li>The JSON object was inerted into the HTML</li>
+        </ol>
+        <img src="../../assets/image/hydration_page.png" alt="">
+      </div>
+    </div>
+  </div>
+
   <!-- reference -->
   <div [ngClass]="referenceClassName" (click)="toggleReferenceOpen()">
     >
   </div>
   <div [ngClass]="referenceSectionClassName">
-    <div class="title">5. Reference</div>
+    <div class="title">4. Reference</div>
     <div class="content-container">
       <ul>
         <li>
@@ -77,6 +139,21 @@
         <li>
           <a href="https://fullstackladder.dev/blog/2021/10/16/static-site-generator-using-angular-universal-prerender/">
             [Angular Universal] 使用 Prerender 建立自己的 Static Site Generator
+          </a>
+        </li>
+        <li>
+          <a href="https://open.alipay.com/portal/forum/post/138001051">
+            Angular 应用程序的 Hydration 概念详解
+          </a>
+        </li>
+        <li>
+          <a href="https://blog.crazyalu.com/2023/05/08/angular-hydration-intro/">
+            關於 Angular SSR 與 Hydration
+          </a>
+        </li>
+        <li>
+          <a href="https://blog.csdn.net/angela_zhaoBei/article/details/125008459">
+            browser-sync的安装及使用
           </a>
         </li>
       </ul>
