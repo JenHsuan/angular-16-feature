@@ -1,6 +1,46 @@
 <div class="base-container">
-  <div class="title">Hydration</div>
+  <div class="title">Non-destructive hydration</div>
   
+  <!-- title -->
+  <div [ngClass]="titleClassName" (click)="toggleTitleOpen()">
+    >
+  </div>
+  <div [ngClass]="titleSectionClassName">
+    <div class="title">1. Description</div>
+    <div class="description-container">
+      <div class="item">
+        Hydration is the trade-off between <a href="https://dev.to/jenhsuan/day-32-of-100daysofcode-the-difference-between-csr-ssr-pre-rendering-and-static-ssr-1f49">CSR ans SSR</a>. Navigation requests like full page loads or reloads are handled by a server that renders the application to HTML, then the JavaScript and data used for rendering is embedded into the resulting document.
+      </div>
+      <div class="item">
+        <b>There are two types of hydrations.</b>
+        <ol>
+          <li>Destructive hydration: destroy the DOM tree and reload it when rendering on the browser (has flickering issue)</li>
+          <li>Non-destructive hydration: instead of destroying, the DOM tree will be leveraged on the client side</li>
+        </ol>
+        <div class="item">
+          In Angular v16, the flickering issue of hydration was solved. The non-destructive 
+          hydration is introduced.
+        </div>
+      </div>
+      <div class="item">
+        <b>How non-destructive hydration works?</b>
+        <ol>
+          <li>The server generates the initial HTML (SSR)</li>
+          <li>The client recieves the initial HTML (in this stage, the user still can't interact to the web page)</li>
+          <li>The client downloads the JavaScript bundles</li>
+          <li>The JavaScript bundles executes when it's downloaded</li>
+          <li>Hydration: the JavaScript will leveraged the web page (in this stage, the user can interact to the web page)</li>
+        </ol>
+      </div>
+      <div class="image-container">
+        <img src="../../assets/image/hydration.png" alt="">
+      </div>
+      <div>
+        reference: <a href="">Google blog</a>
+      </div>
+    </div>
+  </div>
+
   <!-- reference -->
   <div [ngClass]="referenceClassName" (click)="toggleReferenceOpen()">
     >

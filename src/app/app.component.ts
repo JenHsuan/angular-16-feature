@@ -20,7 +20,7 @@ const TYPE_TITLE_MAP = new Map<ROUTE_TYPE, string>([
   [ROUTE_TYPE.HOME, ''],
   [ROUTE_TYPE.NOTES, 'Notes'],
   [ROUTE_TYPE.SIGNAL, 'Signal'],
-  [ROUTE_TYPE.HYDRATION, 'Hydration']
+  [ROUTE_TYPE.HYDRATION, 'Non-destructive hydration']
 ]);
 
 @Component({

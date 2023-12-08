@@ -17,6 +17,13 @@
     margin: 0 auto 4em;
     font-style: normal;
     font-weight: 400;
+    .item {
+      margin: .4em 0;
+    }
+    .image-container {
+      display: flex;
+      justify-content: center;
+    }
   }
 
   .debugging-container {

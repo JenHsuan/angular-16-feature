@@ -8,32 +8,68 @@
   <div [ngClass]="titleSectionClassName">
     <div class="title">1. Description</div>
     <div class="description-container">
-      <div>
-        Before v16, the Angular change detection depends on NgZone.js. 
-        <b>NgZone</b> mutates the common events of the browser (<b>Monkey Patching</b>) for trigering the change detection. There are some downsides.
+      <div class="item">
+        
       </div>
-      <ul>
-        <li>
-          The <b>await</b> and <b>async</b> will be converted to <b>Promise</b> even tough the browser already supported it 
-        </li>
-        <li>
-          In the <b>default</b> strategy, <b>NgZone</b> will check if there are any changes from the template expressions for all components of the component tree
-        </li>
-        <li>
-          In the <b>OnPush</b> strategy, <b>NgZone</b> will only check if there are changes of <b>immutable</b> or <b>observable</b> for components marked as dirty
-        </li>
-      </ul> 
+      <b>NgZone</b>
+      <div class="item">
+        The Angular change detection depends on NgZone. 
+        NgZone mutates the common events of the browser (Monkey Patching) for trigering the change detection.
+      </div>
+      <div class="item">
+        <div>There are some downsides.</div>
+        <ul>
+          <li>
+            The await and async will be converted to Promise even tough the browser already supported it 
+          </li>
+          <li>
+            For the default strategy, NgZone will check if there are any changes from the template expressions for all components of the component tree
+          </li>
+          <li>
+            For the OnPush strategy, NgZone will only check if there are changes of immutable or observable for components marked as dirty
+          </li>
+        </ul> 
+      </div>
 
-      <div>
+      <b>Change Detection</b>
+      <div class="item">
+        <div>Open the developer tool and push the button on the tree then we can realize which components will be detected changed</div>
+        <ul>
+          <li>For <b>default</b> strategy, it'll cause CD on components of branch. Also, it also cause CD on other branches except <b>OnPush</b></li>
+          <li>For <b>OnPush</b> strategy, it'll cause CD on components of branch. Also, it also cause CD on other branches</li>
+          <li>For <b>OnPush</b> + <b>Signal</b>, it'll cause CD on components of branch. Also, it also cause CD on other branches</li>
+        </ul>
+      </div>
+      <div class="demo-container">
+        <div class="demo">
+          <div class="node-title">root (default)</div>
+          <div class="content">
+            <app-signal-parent></app-signal-parent>
+            <app-push-parent></app-push-parent>
+            <app-default-parent></app-default-parent>
+          </div>
+        </div>
+      </div>
+      
+      <b>Signal APIs</b>
+      <div class="item">
         In v16, Angular introduces the <b>Signal APIs</b> in order to release <b>NgZone</b> in the future. 
         <a href="https://stackoverflow.com/questions/76793429/i-want-to-use-angular-signals-do-i-have-to-turn-of-zone-js">
           (But the automatic CD is still controlled by NgZone now)
         </a>
+      </div>
+      <div class="item">
         <div>
-          <b>Signal APIs</b> wil only refresh the view when the value of signal is changed. 
+          A signal is a wrapper around a value that can notify interested consumers when that value changes. Signals can contain any value, from simple primitives to complex data structures.
+        </div>
+        <div class="image-container">
+          <img src="../../assets/image/signal.png" alt="">
         </div>
       </div>
     </div>
+
+
+    
   </div>
 
   <!-- content -->
@@ -41,41 +77,12 @@
     >
   </div>
   <div [ngClass]="contentSectionClassName">
-    <div class="title">2. Concept</div>
-    <div class="description-container">
-      <div>
-        A signal is a wrapper around a value that can notify interested consumers when that value changes. Signals can contain any value, from simple primitives to complex data structures.
-      </div>
-      <div class="image-container">
-        <img src="../../assets/image/signal.png" alt="">
-      </div>
-    </div>
-
-    <div class="title">3. How to use?</div>
+    
+    <div class="title">2. How to use?</div>
     <div class="content-container">
       <pre>
         <code [innerHTML]="escapeHtml(code)"></code>
       </pre>
-    </div>
-
-    <div class="title">4. Change Detection</div>
-    <div class="description-container">
-      <ul>
-        <li>Open the developer tool: we can realize which components will be detected changed</li>
-        <li>For <b>default</b> strategy, it'll cause CD on components of branch. Also, it also cause CD on other branches except <b>OnPush</b></li>
-        <li>For <b>OnPush</b> strategy, it'll cause CD on components of branch. Also, it also cause CD on other branches</li>
-        <li>For <b>OnPush</b> + <b>Signal</b>, it'll cause CD on components of branch. Also, it also cause CD on other branches</li>
-      </ul>
-    </div>
-    <div class="demo-container">
-      <div class="demo">
-        <div class="node-title">root (default)</div>
-        <div class="content">
-          <app-signal-parent></app-signal-parent>
-          <app-push-parent></app-push-parent>
-          <app-default-parent></app-default-parent>
-        </div>
-      </div>
     </div>
 
   </div>
@@ -86,7 +93,7 @@
     >
   </div>
   <div [ngClass]="referenceSectionClassName">
-    <div class="title">5. Reference</div>
+    <div class="title">3. Reference</div>
     <div class="content-container">
       <ul>
         <li>
