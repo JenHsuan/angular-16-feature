@@ -16,10 +16,12 @@ import { toObservable, toSignal } from '@angular/core/rxjs-interop';
         reset
       </button>
       <div class="formatted-num">
-        {{ formattedNum()}}
-      </div>
-      <div class="formatted-num">
-        observable: {{ num$ | async }}
+        <div>
+          {{ formattedNum()}}
+        </div>
+        <div>
+          observable: {{ num$ | async }}
+        </div>
       </div>
     </div>`,
   styleUrls: ['./signal-demo.component.scss'],

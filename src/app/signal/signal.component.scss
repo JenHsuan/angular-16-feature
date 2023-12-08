@@ -1,7 +1,7 @@
 .demo-container {
   flex-direction: column;
   border: 1px solid red;
-  width: 30em;
+  width: 35em;
   justify-content: center;
   align-items: center;
   padding: .5em;
@@ -12,6 +12,7 @@
   flex-direction: column;
   .node-title {
     text-align: center;
+    margin-bottom: .3em;
   }
   .content {
     display: flex;
