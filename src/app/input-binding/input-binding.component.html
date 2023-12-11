@@ -1,0 +1,90 @@
+<div class="base-container">
+  <div class="title">Router Syntax Improvement - Input Binding</div>
+
+  <!-- title -->
+  <div [ngClass]="titleClassName" (click)="toggleTitleOpen()">
+    >
+  </div>
+  <div [ngClass]="titleSectionClassName">
+    <div class="title">1. Description</div>
+    <div class="description-container">
+      <div class="item">
+        In Agular v16, it becomes easier to retrieve the path parameter from the route.
+         We can get it by using the Inpur parameter.
+      </div>
+    </div>
+  </div>
+
+  <!-- demo -->
+  <div [ngClass]="demoClassName" (click)="toggleDemoOpen()">
+    >
+  </div>
+  <div [ngClass]="demoSectionClassName">
+    <div class="title">2. How to use?</div>
+    <div class="description-container">
+      <div class="item">
+        <ol>
+          <li>
+            <div>Create a new component</div>
+            <div>
+              <pre>
+                <code [innerHTML]="escapeHtml(step1)"></code>
+              </pre>
+            </div>
+          </li>
+          <li>
+            <div>Update the component</div>
+            <div>
+              <pre>
+                <code [innerHTML]="escapeHtml(step2)"></code>
+              </pre>
+            </div>
+          </li>
+          <li>
+            <div>Update the routes table</div>
+            <div>
+              <pre>
+                <code [innerHTML]="escapeHtml(step3)"></code>
+              </pre>
+            </div>
+          </li>
+          <li>
+            <div>Update the main.ts</div>
+            <div>
+              <pre>
+                <code [innerHTML]="escapeHtml(step4)"></code>
+              </pre>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="title">3. Demo</div>
+    <div class="demo-container">
+      <div class="item">
+        <button (click)="nav()">Navigate with the route parameter </button>
+      </div>
+      <div class="item">
+        <div>The path parameter is: {{id}}</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- reference -->
+  <div [ngClass]="referenceClassName" (click)="toggleReferenceOpen()">
+    >
+  </div>
+  <div [ngClass]="referenceSectionClassName">
+    <div class="title">4. Reference</div>
+    <div class="content-container">
+      <ul>
+        <li>
+          <a href="https://blog.miniasp.com/post/2023/07/24/Angular-16-New-Features-Route-to-Component-Inputs">
+            簡化 Angular 16 路由機制：使用 Input() 取得路由參數值
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

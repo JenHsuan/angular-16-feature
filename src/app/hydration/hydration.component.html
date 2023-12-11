@@ -25,11 +25,9 @@
       <div class="item">
         <b>How non-destructive hydration works?</b>
         <ol>
-          <li>The server generates the initial HTML (SSR)</li>
-          <li>The client recieves the initial HTML (in this stage, the user still can't interact to the web page)</li>
-          <li>The client downloads the JavaScript bundles</li>
-          <li>The JavaScript bundles executes when it's downloaded</li>
-          <li>Hydration: the JavaScript will leveraged the web page (in this stage, the user can interact to the web page)</li>
+          <li *ngFor="let item of steps">
+            {{item}}
+          </li>
         </ol>
       </div>
       <div class="image-container">
@@ -156,6 +154,11 @@
         <li>
           <a href="https://blog.csdn.net/angela_zhaoBei/article/details/125008459">
             browser-sync的安装及使用
+          </a>
+        </li>
+        <li>
+          <a href="https://hackmd.io/@ChrisW/H1ubXhh3s">
+            How Morden App Render
           </a>
         </li>
       </ul>

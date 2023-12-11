@@ -1,0 +1,125 @@
+<div class="base-container">
+  <div class="title">New tools on ng CLI for standalone API</div>
+
+  <!-- title -->
+  <div [ngClass]="titleClassName" (click)="toggleTitleOpen()">
+    >
+  </div>
+  <div [ngClass]="titleSectionClassName">
+    <div class="title">1. Description</div>
+    <div class="description-container">
+      <div class="item">
+        Angular provides standalone APIs from 
+        <a href="https://glistening-cupcake-ead467.netlify.app">
+          Angular v14 (Developer preview)
+        </a>
+         and
+        <a href="https://verdant-fenglisu-1b7a2d.netlify.app/#/standalone">
+          Angular v15
+        </a>. 
+      </div>
+      <div class="item">
+        In v16, there are a few new enhancements for standalone APIs. 
+      </div>
+      <ol>
+        <li>
+          <div>
+            Command to transform the legacy code to the stanalone APP automatically
+            <a href="https://angular.io/guide/standalone-migration">
+              (Migration guide)
+            </a>
+          </div>
+          <div>
+            <pre>
+              <code [innerHTML]="escapeHtml(migration)"></code>
+            </pre>
+          </div>
+        </li>
+        <li>
+          <div>
+            Command to generate the stanalone APP
+          </div>
+          <div>
+            <pre>
+              <code [innerHTML]="escapeHtml(standaloneApp)"></code>
+            </pre>
+          </div>
+        </li>
+        <li>
+          <div>
+            Configuration of NgZone for standalone APP
+          </div>
+          <div>
+            <pre>
+              <code [innerHTML]="escapeHtml(ngZone)"></code>
+            </pre>
+          </div>
+        </li>
+      </ol>
+    </div>
+
+    <div class="title">2. ngZoneEventCoalescing</div>
+    <div class="description-container">
+      <div class="item">
+        In the default strategy or the OnPush strategy, the button clicking will triiger the change detection of NgZone. 
+        Even the event was propagated by the event bubbling mechanism, the change detection will still happen. 
+      </div>
+      <div class="item">
+        After Angular 9, we could coalesce events together so that there is only one change detection.
+      </div>
+    </div>
+  </div>
+
+  <!-- demo -->
+  <div [ngClass]="demoClassName" (click)="toggleDemoOpen()">
+    >
+  </div>
+  <div [ngClass]="demoSectionClassName">
+    <div class="title">3. Demo</div>
+    <div class="demo-container">
+      <app-standalone-parent></app-standalone-parent>
+    </div>
+    <div class="description-container">
+      <div class="item">
+        There is the source code.
+      </div>
+      <div>
+        <pre>
+          <code [innerHTML]="escapeHtml(coalescing)"></code>
+        </pre>
+      </div>
+    </div>
+  </div>
+
+  <!-- reference -->
+  <div [ngClass]="referenceClassName" (click)="toggleReferenceOpen()">
+    >
+  </div>
+  <div [ngClass]="referenceSectionClassName">
+    <div class="title">3. Reference</div>
+    <div class="content-container">
+      <ul>
+        <li>
+          <a href="https://netbasal.com/reduce-change-detection-cycles-with-event-coalescing-in-angular-c4037199859f">
+            Reduce Change Detection Cycles with Event Coalescing in Angular
+          </a>
+        </li>
+        <li>
+          <a href="https://blog.techbridge.cc/2017/07/15/javascript-event-propagation/">
+            DOM 的事件傳遞機制：捕獲與冒泡
+          </a>
+        </li>
+        <li>
+          <a href="https://www.runoob.com/jsref/met-element-addeventlistener.html">
+            HTML DOM addEventListener() 方法
+          </a>
+        </li>
+        <li>
+          <a href="https://javascript.info/bubbling-and-capturing">
+            Bubbling and capturing
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,61 @@
+<div class="base-container">
+  <div class="title">esbuild supported on the ng build (Developer preview)</div>
+
+  <!-- title -->
+  <div [ngClass]="titleClassName" (click)="toggleTitleOpen()">
+    >
+  </div>
+  <div [ngClass]="titleSectionClassName">
+    <div class="title">1. Description</div>
+    <div class="description-container">
+      <div class="item">
+        Angular began to support esbuild from 
+        <a href="https://glistening-cupcake-ead467.netlify.app">
+          Angular v14 (Experimental feature)
+        </a>
+         and
+        <a href="https://verdant-fenglisu-1b7a2d.netlify.app/#/esbuild">
+          Angular v15 (Experimental feature)
+        </a>. 
+      </div>
+      <div class="item">
+        In v16, esbuild enters <b>Developer preview</b> and uses <b>Vite</b> as the dev server with the following benefits. 
+        Early tests showed over 72% improvement in cold production builds.
+      </div>
+      <div class="item">
+        After the i18n is supported, the esbuild will be of  the Developer preview.
+      </div>
+    </div>
+  </div>
+  
+  <!-- content -->
+  <div [ngClass]="contentClassName" (click)="toggleContentOpen()">
+    >
+  </div>
+  <div [ngClass]="contentSectionClassName">
+    <div class="title">2. Steps</div>
+
+    <div class="content-container">
+      <pre>
+        <code [innerHTML]="steps"></code>
+      </pre>
+    </div>
+  </div>
+
+  <!-- reference -->
+  <div [ngClass]="referenceClassName" (click)="toggleReferenceOpen()">
+    >
+  </div>
+  <div [ngClass]="referenceSectionClassName">
+    <div class="title">3. Reference</div>
+    <div class="content-container">
+      <ul>
+        <li>
+          <a href="https://dev.to/kristiyan_velkov/angular-16-with-vite-564b">
+            Angular 16 with Vite
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

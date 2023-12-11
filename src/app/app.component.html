@@ -7,17 +7,11 @@
           {{title}}
         </div>
       </a>
-      <button [ngClass]="getRouteStyle(routeType.SIGNAL)"
-        mat-button (click)="changeRoute(routeType.SIGNAL)">
-        {{getRouteTitle(routeType.SIGNAL)}}
-      </button>
-      <button [ngClass]="getRouteStyle(routeType.HYDRATION)"
-        mat-button (click)="changeRoute(routeType.HYDRATION)">
-        {{getRouteTitle(routeType.HYDRATION)}}
-      </button>
-      <button [ngClass]="getRouteStyle(routeType.NOTES)"
-        mat-button (click)="changeRoute(routeType.NOTES)">
-        {{getRouteTitle(routeType.NOTES)}}
+      <button *ngFor="let item of sideBarList"
+        [ngClass]="getRouteStyle(item)"
+        (click)="changeRoute(item)"
+        mat-button>
+        {{getRouteTitle(item)}}
       </button>
       <div class="footer">
         <div>

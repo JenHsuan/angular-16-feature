@@ -1,0 +1,159 @@
+<div class="base-container">
+  <div class="title">CSP Spports for CSS inline styles</div>
+
+  <!-- title -->
+  <div [ngClass]="titleClassName" (click)="toggleTitleOpen()">
+    >
+  </div>
+  <div [ngClass]="titleSectionClassName">
+    <div class="title">1. Cross-site scripting (XSS)</div>
+    <div class="description-container">
+      <a href="https://zh.wikipedia.org/zh-tw/%E8%B7%A8%E7%B6%B2%E7%AB%99%E6%8C%87%E4%BB%A4%E7%A2%BC">
+        XSS
+      </a>
+      is a kind of cyber attacks. The adversary injects malicious code into a truested website.
+      When the user visits the websites, the malicious doe will be executed. It's usually used to retrived the user's cookie. 
+    </div>
+
+    <div class="title">2. Content Security Policy (CSP)</div>
+    <div class="description-container">
+      <div class="item">
+        A 
+        <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP">
+          CSP
+        </a> browser will then only execute scripts loaded in source files received from those allowed domains, ignoring all other scripts (including inline scripts and event-handling HTML attributes).
+      </div>
+      <div class="item">
+        There are a few common usages
+      </div>
+      <ul>
+        <li>
+          <div>All content should come from the site's own origin (this excludes subdomains.)</div>
+          <div>
+            <pre>
+              <code [innerHTML]="example1"></code>
+            </pre>
+          </div>
+        </li>
+        <li>
+          <div>Allow users of a web application to include images from any origin in their own content, but to restrict audio or video media to trusted providers, and all scripts only to a specific server that hosts trusted code.</div>
+          <div>
+            <pre>
+              <code [innerHTML]="example2"></code>
+            </pre>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="title">3. ngCspNonce</div>
+    <div class="description-container">
+      <div class="item">
+        For the CSS style sheet, we could use the following rule to only allow the source of the link should be the same site. It will also block the inline stylesheet
+      </div>
+      <div class="item">
+        <pre>
+          <code [innerHTML]="example3"></code>
+        </pre>
+      </div>
+      <div class="item">
+        After applying the CSP, the component level styles will be blocked.
+      </div>
+      <div class="image-container">
+        <img src="../../assets/image/csp_inline.png" alt="">
+      </div>
+      <div class="item">
+        In Angular v16, we could use <b>ngCspNonce</b> to allow the component-level styles (inline styles).
+      </div>
+      <div class="item">
+        <ol>
+          <li>
+            <div>Update the header from the index.html with the following lines</div>
+            <div>
+              <pre>
+                <code [innerHTML]="step1"></code>
+              </pre>
+            </div>
+          </li>
+          <li>
+            <div>Update the app-root from the index.html with the following lines</div>
+            <div>
+              <pre>
+                <code [innerHTML]="step2"></code>
+              </pre>
+            </div>
+          </li>
+        </ol>
+      </div>
+      <div class="item">
+        <div>And the page will bee back.</div>
+      </div>
+      <div class="image-container">
+        <img src="../../assets/image/csp_inline_2.png" alt="">
+      </div>
+    </div>
+  </div>
+
+  <!-- reference -->
+  <div [ngClass]="referenceClassName" (click)="toggleReferenceOpen()">
+    >
+  </div>
+  <div [ngClass]="referenceSectionClassName">
+    <div class="title">4. Reference</div>
+    <div class="content-container">
+      <ul>
+        <li>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP">
+            Content Security Policy (CSP)
+          </a>
+        </li>
+        <li>
+          <a href="https://cloud.tencent.com/developer/article/2281714">
+            Angular 16 正式版发布
+          </a>
+        </li>
+        <li>
+          <a href="https://www.tsg.com.tw/blog-detail10-317-1-content-security-policy.html">
+            CSP是什麼？內容安全策略Content Security Policy｜天矽科技網頁設計
+          </a>
+        </li>
+        <li>
+          <a href="https://hackmd.io/@Eotones/BkOX6u5kX">
+            Content Security Policy (CSP) 筆記
+          </a>
+        </li>
+        <li>
+          <a href="https://blog.stackademic.com/whats-a-nonce-7508458bded9">
+            What’s a Nonce?
+          </a>
+        </li>
+        <li>
+          <a href="https://www.stackhawk.com/blog/angular-content-security-policy-guide-what-it-is-and-how-to-enable-it/">
+            Angular Content Security Policy Guide: What It Is and How to Enable It
+          </a>
+        </li>
+        <li>
+          <a href="https://angular.io/guide/security">
+            Angular Security (official dpcument)
+          </a>
+        </li>
+        <li>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy/style-src">
+            CSP: style-src
+          </a>
+        </li>
+        <li>
+          <a href="https://content-security-policy.com/examples/allow-inline-style/">
+            Content Security Policy (CSP) Examples
+          </a>
+        </li>
+        <li>
+          <a href="http://www.alloyteam.com/2020/08/csp-nonce/">
+            Csp Nonce – 守护你的 inline Script
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+

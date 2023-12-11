@@ -6,6 +6,8 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <!-- <meta http-equiv="Content-Security-Policy: default-src 'self'"> -->
+  <meta http-equiv="Content-Security-Policy" content="style-src 'self' 'nonce-randomNonce'">
   <meta property="og:description" content="Learn and test new features in Angular 16"/>
   <meta property="og:title" content="New features in Angular 16"/>
   <meta property="og:url" content="https://marvelous-gnome-0802fa.netlify.app/"/>
@@ -14,6 +16,6 @@
   <meta name="author" content="Jen-Hsuan Hsieh (Sean Hsieh)"/>
 </head>
 <body>
-  <app-root></app-root>
+  <app-root ngCspNonce="randomNonce"></app-root>
 </body>
 </html>
