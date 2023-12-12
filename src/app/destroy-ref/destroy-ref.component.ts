@@ -27,18 +27,25 @@ export default class DestroyRefComponent {
   `;
 
   demo2 = `
-  private subscriptions = destroyScope();
+  export default class DestroyRefComponent {
+    private subscriptions = destroyScope();
 
-  ngOnInit() {
-    //Add the subscription to scope
-    this.subscriptions.add(
-      interval(1000).subscribe(value => console.log(value))
-    );
+    ngOnInit() {
+      //Add the subscription to scope
+      this.subscriptions.add(
+        interval(1000).subscribe(value => console.log(value))
+      );
 
-    //Or use takeUntilDestroyed
-    interval(1000).pipe(
-      takeUntilDestroyed(this.destroyRef)
-    ).subscribe(console.log);
+      //Or use takeUntilDestroyed (takeUntilDestroyed requires an injection context )
+      interval(1000).pipe(
+        takeUntilDestroyed(this.destroyRef)
+      ).subscribe(console.log);
+    }
+
+    //Or use takeUntilDestroyed inside the constructor
+    constructor() {
+      interval(1000).pipe(takeUntilDestroyed()).subscribe(console.log);
+    }
   }
 
   export function destroyScope() {
