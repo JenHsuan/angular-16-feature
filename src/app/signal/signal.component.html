@@ -1,11 +1,8 @@
 <div class="base-container">
-  <div class="title">Signal APIs</div>
+  <div class="title">{{ title }}</div>
 
   <!-- title -->
-  <div [ngClass]="titleClassName" (click)="toggleTitleOpen()">
-    >
-  </div>
-  <div [ngClass]="titleSectionClassName">
+  <app-section-container>
     <div class="title">1. Description</div>
     <div class="description-container">
       <div class="item">
@@ -67,26 +64,20 @@
         </div>
       </div>
     </div>
-  </div>
+  </app-section-container>
 
   <!-- content -->
-  <div [ngClass]="contentClassName" (click)="toggleContentOpen()">
-    >
-  </div>
-  <div [ngClass]="contentSectionClassName">
+  <app-section-container>
     <div class="title">2. How to use?</div>
     <div class="content-container">
       <pre>
         <code [innerHTML]="escapeHtml(code)"></code>
       </pre>
     </div>
-  </div>
+  </app-section-container>
   
   <!-- reference -->
-  <div [ngClass]="referenceClassName" (click)="toggleReferenceOpen()">
-    >
-  </div>
-  <div [ngClass]="referenceSectionClassName">
+  <app-section-container>
     <div class="title">3. Reference</div>
     <div class="content-container">
       <ul>
@@ -112,5 +103,6 @@
         </li>
       </ul>
     </div>
-  </div>
+  
+  </app-section-container>
 </div>

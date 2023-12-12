@@ -1,16 +1,21 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BaseComponent } from '../base/base.component';
 import { StandaloneParentComponent } from './standalone-parent/standalone-parent.component';
+import { ROUTE_TYPE, TYPE_TITLE_MAP } from '../public/route/route.domain';
+import { SectionContainerComponent } from '../public/section-container/section-container.component';
+import { escapeHtml } from '../public/utils/utils';
 
 @Component({
   selector: 'app-standalone',
   standalone: true,
-  imports: [CommonModule, StandaloneParentComponent],
+  imports: [CommonModule, SectionContainerComponent, StandaloneParentComponent],
   templateUrl: './standalone.component.html',
   styleUrls: ['./standalone.component.scss']
 })
-export default class StandaloneComponent extends BaseComponent {
+export default class StandaloneComponent {
+  title = TYPE_TITLE_MAP.get(ROUTE_TYPE.STANDALONE);
+  escapeHtml = escapeHtml;
+  
   migration = `ng generate @angular/core:standalone`;
   standaloneApp = `ng new --standalone`;
   ngZone = `

@@ -1,0 +1,45 @@
+<div class="base-container">
+  <div class="title">{{ title }}</div>
+
+  <!-- description -->
+  <app-section-container>
+    <div class="title">1. Description</div>
+    <div class="description-container">
+      <div class="item">
+        In Angular 16, it provides a flexible and injectable way to do clean up or destruction. 
+        Instead of using the life function ngOnDestroy, we can inject DestroyRef and reister the onDestroy lifecycle hook.   
+      </div>
+      <div class="item">
+        <pre>
+          <code [innerHTML]="escapeHtml(demo1)"></code>
+        </pre>
+      </div>
+      <div class="item">
+        Compared to the life function ngOnDestroy, it has a few properties.
+        <ul>
+          <li>DestroyRef is injectable, we can create a reusable function and put our cleanup logic in</li>
+          <li>ngOnDestroy lifecycle hook method would run before DestroyRef.onDestroy() if we had both of them in the same scope</li>
+        </ul>
+      </div>
+      <div class="item">
+        <pre>
+          <code [innerHTML]="escapeHtml(demo2)"></code>
+        </pre>
+      </div>
+    </div>
+  </app-section-container>
+
+  <!-- reference -->
+  <app-section-container>
+    <div class="title">2. Reference</div>
+    <div class="content-container">
+      <ul>
+        <li>
+          <a href="https://angulargems.beehiiv.com/p/how-to-use-destroy-ref-in-angular">
+            How to Use DestroyRef in Angular v16
+          </a>
+        </li>
+      </ul>
+    </div>
+  </app-section-container>
+</div>

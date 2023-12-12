@@ -48,6 +48,11 @@ export const routes: Routes = [
     path: 'input-binding/:id',
     loadComponent: () => import('../app/input-binding/input-binding.component'),
     title: 'Angular 16 - input binding'
+  },
+  {
+    path: 'destroy-ref',
+    loadComponent: () => import('../app/destroy-ref/destroy-ref.component'),
+    title: 'Angular 16 - destroy ref'
   }
 ];
 

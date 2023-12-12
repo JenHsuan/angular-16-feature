@@ -1,11 +1,8 @@
 <div class="base-container">
-  <div class="title">CSP Spports for CSS inline styles</div>
+  <div class="title">{{ title }}</div>
 
-  <!-- title -->
-  <div [ngClass]="titleClassName" (click)="toggleTitleOpen()">
-    >
-  </div>
-  <div [ngClass]="titleSectionClassName">
+  <!-- XSS -->
+  <app-section-container>
     <div class="title">1. Cross-site scripting (XSS)</div>
     <div class="description-container">
       <a href="https://zh.wikipedia.org/zh-tw/%E8%B7%A8%E7%B6%B2%E7%AB%99%E6%8C%87%E4%BB%A4%E7%A2%BC">
@@ -14,7 +11,10 @@
       is a kind of cyber attacks. The adversary injects malicious code into a truested website.
       When the user visits the websites, the malicious doe will be executed. It's usually used to retrived the user's cookie. 
     </div>
+  </app-section-container>
 
+  <!-- CSP -->
+  <app-section-container>
     <div class="title">2. Content Security Policy (CSP)</div>
     <div class="description-container">
       <div class="item">
@@ -31,7 +31,7 @@
           <div>All content should come from the site's own origin (this excludes subdomains.)</div>
           <div>
             <pre>
-              <code [innerHTML]="example1"></code>
+              <code [innerHTML]="escapeHtml(example1)"></code>
             </pre>
           </div>
         </li>
@@ -39,13 +39,16 @@
           <div>Allow users of a web application to include images from any origin in their own content, but to restrict audio or video media to trusted providers, and all scripts only to a specific server that hosts trusted code.</div>
           <div>
             <pre>
-              <code [innerHTML]="example2"></code>
+              <code [innerHTML]="escapeHtml(example2)"></code>
             </pre>
           </div>
         </li>
       </ul>
     </div>
+  </app-section-container>
 
+  <!-- ngCspNonce -->
+  <app-section-container>
     <div class="title">3. ngCspNonce</div>
     <div class="description-container">
       <div class="item">
@@ -53,7 +56,7 @@
       </div>
       <div class="item">
         <pre>
-          <code [innerHTML]="example3"></code>
+          <code [innerHTML]="escapeHtml(example3)"></code>
         </pre>
       </div>
       <div class="item">
@@ -92,13 +95,10 @@
         <img src="../../assets/image/csp_inline_2.png" alt="">
       </div>
     </div>
-  </div>
+  </app-section-container>
 
   <!-- reference -->
-  <div [ngClass]="referenceClassName" (click)="toggleReferenceOpen()">
-    >
-  </div>
-  <div [ngClass]="referenceSectionClassName">
+  <app-section-container>
     <div class="title">4. Reference</div>
     <div class="content-container">
       <ul>
@@ -154,6 +154,6 @@
         </li>
       </ul>
     </div>
-  </div>
+  </app-section-container>
 </div>
 

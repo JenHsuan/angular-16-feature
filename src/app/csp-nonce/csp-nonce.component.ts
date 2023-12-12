@@ -1,15 +1,20 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BaseComponent } from '../base/base.component';
+import { SectionContainerComponent } from '../public/section-container/section-container.component';
+import { escapeHtml } from '../public/utils/utils';
+import { ROUTE_TYPE, TYPE_TITLE_MAP } from '../public/route/route.domain';
 
 @Component({
   selector: 'app-csp-nonce',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, SectionContainerComponent],
   templateUrl: './csp-nonce.component.html',
   styleUrls: ['./csp-nonce.component.scss']
 })
-export default class CspNonceComponent extends BaseComponent {
+export default class CspNonceComponent {
+  title = TYPE_TITLE_MAP.get(ROUTE_TYPE.CSP_NONCE);
+  escapeHtml = escapeHtml;
+
   example1 = `
   http-equiv="Content-Security-Policy: default-src 'self'"
   `;

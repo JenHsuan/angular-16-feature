@@ -1,11 +1,8 @@
 <div class="base-container">
-  <div class="title">New tools on ng CLI for standalone API</div>
+  <div class="title">{{ title }}</div>
 
   <!-- title -->
-  <div [ngClass]="titleClassName" (click)="toggleTitleOpen()">
-    >
-  </div>
-  <div [ngClass]="titleSectionClassName">
+  <app-section-container>
     <div class="title">1. Description</div>
     <div class="description-container">
       <div class="item">
@@ -68,13 +65,10 @@
         After Angular 9, we could coalesce events together so that there is only one change detection.
       </div>
     </div>
-  </div>
+  </app-section-container>
 
   <!-- demo -->
-  <div [ngClass]="demoClassName" (click)="toggleDemoOpen()">
-    >
-  </div>
-  <div [ngClass]="demoSectionClassName">
+  <app-section-container>
     <div class="title">3. Demo</div>
     <div class="demo-container">
       <app-standalone-parent></app-standalone-parent>
@@ -89,13 +83,10 @@
         </pre>
       </div>
     </div>
-  </div>
+  </app-section-container>
 
   <!-- reference -->
-  <div [ngClass]="referenceClassName" (click)="toggleReferenceOpen()">
-    >
-  </div>
-  <div [ngClass]="referenceSectionClassName">
+  <app-section-container>
     <div class="title">3. Reference</div>
     <div class="content-container">
       <ul>
@@ -121,5 +112,5 @@
         </li>
       </ul>
     </div>
-  </div>
+  </app-section-container>
 </div>

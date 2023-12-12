@@ -1,15 +1,20 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BaseComponent } from '../base/base.component';
+import { ROUTE_TYPE, TYPE_TITLE_MAP } from '../public/route/route.domain';
+import { SectionContainerComponent } from '../public/section-container/section-container.component';
+import { escapeHtml } from '../public/utils/utils';
 
 @Component({
   selector: 'app-hydration',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, SectionContainerComponent],
   templateUrl: './hydration.component.html',
   styleUrls: ['./hydration.component.scss']
 })
-export default class HydrationComponent extends BaseComponent {
+export default class HydrationComponent {
+  title = TYPE_TITLE_MAP.get(ROUTE_TYPE.HYDRATION);
+  escapeHtml = escapeHtml;
+  
   steps = [
     'The server generates the initial HTML (SSR)',
     'The client recieves the initial HTML (in this stage, the user still can\'t interact to the web page)',

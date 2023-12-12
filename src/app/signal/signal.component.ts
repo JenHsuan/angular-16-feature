@@ -1,22 +1,24 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BaseComponent } from '../base/base.component';
-import { SignalDemoComponent } from './signal-demo/signal-demo.component';
-import { SignalFakeComponent } from './signal-fake/signal-fake.component';
-import { SignalFake2Component } from './signal-fake2/signal-fake2.component';
 import { SignalParentComponent } from './signal-parent/signal-parent.component';
 import { PushParentComponent } from './push-parent/push-parent.component';
 import { DefaultParentComponent } from './default-parent/default-parent.component';
+import { ROUTE_TYPE, TYPE_TITLE_MAP } from '../public/route/route.domain';
+import { SectionContainerComponent } from '../public/section-container/section-container.component';
+import { escapeHtml } from '../public/utils/utils';
 
 @Component({
   selector: 'app-signal',
   standalone: true,
-  imports: [CommonModule, SignalParentComponent, PushParentComponent, DefaultParentComponent],
+  imports: [CommonModule, SectionContainerComponent, SignalParentComponent, PushParentComponent, DefaultParentComponent],
   templateUrl: './signal.component.html',
   styleUrls: ['./signal.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export default class SignalComponent extends BaseComponent {
+export default class SignalComponent {
+  title = TYPE_TITLE_MAP.get(ROUTE_TYPE.SIGNAL);
+  escapeHtml = escapeHtml;
+  
   code = `
   @Component({
     selector: 'app-signal-demo',
