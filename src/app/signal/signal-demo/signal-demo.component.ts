@@ -1,4 +1,4 @@
-import { Component, computed, effect, signal } from '@angular/core';
+import { Component, Injector, computed, effect, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { toObservable, toSignal } from '@angular/core/rxjs-interop';
 
@@ -51,10 +51,20 @@ export class SignalDemoComponent {
 
   //trace the signal value
   //whenever any of these signal values change, the effect runs again
-  constructor() {
+  constructor(private injector: Injector) {
+    //use effect API in the constructor
     effect(() => {
-      console.info(`signal value: ${this.num()}`);
+      console.info(`signal value: ${this.num()} from the constructor`);
     });
+
+    //or use effect API outside the constructor with the injector
+    this.initializeLogging();
+  }
+
+  initializeLogging(): void {
+    effect(() => {
+      console.info(`signal value: ${this.num()} from initializeLogging`);
+    }, {injector: this.injector});
   }
 
   //Check if the CD happened

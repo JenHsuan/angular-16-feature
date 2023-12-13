@@ -67,10 +67,20 @@ export default class SignalComponent {
   
     //trace the signal value
     //whenever any of these signal values change, the effect runs again
-    constructor() {
+    constructor(private injector: Injector) {
+      //use effect API in the constructor
       effect(() => {
         console.info('signal value:' + this.num()');
       });
+
+      //or use effect API outside the constructor with the injector
+      this.initializeLogging();
+    }
+
+    initializeLogging(): void {
+      effect(() => {
+        console.log('signal value:' + this.num()');
+      }, {injector: this.injector});
     }
   
     //Check if the CD happened

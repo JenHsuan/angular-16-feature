@@ -25,7 +25,7 @@ export const ROUTE_MAP = new Map<string, ROUTE_TYPE>([
 export const TYPE_TITLE_MAP = new Map<ROUTE_TYPE, string>([
   [ROUTE_TYPE.HOME, ''],
   [ROUTE_TYPE.NOTES, 'Notes'],
-  [ROUTE_TYPE.SIGNAL, 'Signal APIs'],
+  [ROUTE_TYPE.SIGNAL, 'Signal APIs (Developer Preview)'],
   [ROUTE_TYPE.HYDRATION, 'Non-destructive Hydration (Developer Preview)'],
   [ROUTE_TYPE.STANDALONE, 'Enhancements for Standalone API'],
   [ROUTE_TYPE.ESBUILD, 'esbuild Supported on the ng build (Developer Preview)'],
