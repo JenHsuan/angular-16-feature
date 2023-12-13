@@ -53,6 +53,11 @@ export const routes: Routes = [
     path: 'destroy-ref',
     loadComponent: () => import('../app/destroy-ref/destroy-ref.component'),
     title: 'Angular 16 - destroy ref'
+  },
+  {
+    path: 'breaking-changes',
+    loadComponent: () => import('../app/breaking-changes/breaking-changes.component'),
+    title: 'Angular 16 - breaking changes'
   }
 ];
 

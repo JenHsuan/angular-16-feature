@@ -12,18 +12,19 @@ import { Router } from '@angular/router';
 })
 export class SideBarComponent {
   title = 'Notes of Angular v16';
-  updateTime = '2023/12/12';
+  updateTime = '2023/12/13';
   selectedRoute = ROUTE_TYPE.HOME;
   route: string;
 
   sideBarList = [
     ROUTE_TYPE.SIGNAL,
     ROUTE_TYPE.HYDRATION,
-    ROUTE_TYPE.STANDALONE,
     ROUTE_TYPE.ESBUILD,
+    ROUTE_TYPE.STANDALONE,
     ROUTE_TYPE.CSP_NONCE,
     ROUTE_TYPE.INPUT_BINDING,
     ROUTE_TYPE.DESTROY_REF,
+    ROUTE_TYPE.BREAKING_CHANGE,
     ROUTE_TYPE.NOTES
   ];
 

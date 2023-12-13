@@ -7,7 +7,8 @@ export enum ROUTE_TYPE {
   ESBUILD = 'ESBUILD',
   CSP_NONCE = 'CSP_NONCE',
   INPUT_BINDING = 'INPUT_BINDING',
-  DESTROY_REF = 'DESTROY_REF'
+  DESTROY_REF = 'DESTROY_REF',
+  BREAKING_CHANGE = 'BREAKING_CHANGE'
 };
 
 export const ROUTE_MAP = new Map<string, ROUTE_TYPE>([
@@ -19,7 +20,8 @@ export const ROUTE_MAP = new Map<string, ROUTE_TYPE>([
   ['/esbuild', ROUTE_TYPE.ESBUILD],
   ['/cspnonce', ROUTE_TYPE.CSP_NONCE],
   ['/input-binding', ROUTE_TYPE.INPUT_BINDING],
-  ['/destroy-ref', ROUTE_TYPE.DESTROY_REF]
+  ['/destroy-ref', ROUTE_TYPE.DESTROY_REF],
+  ['/breaking-changes', ROUTE_TYPE.BREAKING_CHANGE]
 ]);
 
 export const TYPE_TITLE_MAP = new Map<ROUTE_TYPE, string>([
@@ -31,5 +33,6 @@ export const TYPE_TITLE_MAP = new Map<ROUTE_TYPE, string>([
   [ROUTE_TYPE.ESBUILD, 'esbuild Supported on the ng build (Developer Preview)'],
   [ROUTE_TYPE.CSP_NONCE, 'CSP Supports for CSS Inline Styles'],
   [ROUTE_TYPE.INPUT_BINDING, 'Router Syntax Improvement - Input Binding'],
-  [ROUTE_TYPE.DESTROY_REF, 'Injectable DestroyRef']
+  [ROUTE_TYPE.DESTROY_REF, 'Injectable DestroyRef'],
+  [ROUTE_TYPE.BREAKING_CHANGE, 'Breaking Changes']
 ]);
