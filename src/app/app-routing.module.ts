@@ -63,6 +63,11 @@ export const routes: Routes = [
     path: 'deprecations',
     loadComponent: () => import('../app/deprecations/deprecations.component'),
     title: 'Angular 16 - deprecations'
+  },
+  {
+    path: 'documents',
+    loadComponent: () => import('../app/documents/documents.component'),
+    title: 'Angular 16 - documents'
   }
 ];
 

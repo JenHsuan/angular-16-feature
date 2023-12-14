@@ -12,7 +12,7 @@ import { SectionContainerComponent } from '../public/section-container/section-c
   styleUrls: ['./deprecations.component.scss']
 })
 export default class DeprecationsComponent {
-  title = TYPE_TITLE_MAP.get(ROUTE_TYPE.BREAKING_CHANGE);
+  title = TYPE_TITLE_MAP.get(ROUTE_TYPE.DEPRECATIONS);
   escapeHtml = escapeHtml;
 
   before = `

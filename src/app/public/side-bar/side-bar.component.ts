@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class SideBarComponent {
   title = 'Notes of Angular v16';
-  updateTime = '2023/12/14';
+  updateTime = '2023/12/15';
   selectedRoute = ROUTE_TYPE.HOME;
   route: string;
 
@@ -26,7 +26,8 @@ export class SideBarComponent {
     ROUTE_TYPE.DESTROY_REF,
     ROUTE_TYPE.NOTES,
     ROUTE_TYPE.BREAKING_CHANGE,
-    ROUTE_TYPE.DEPRECATIONS
+    ROUTE_TYPE.DEPRECATIONS,
+    ROUTE_TYPE.DOCUMENTS
   ];
 
   constructor(

@@ -12,6 +12,7 @@ import { ROUTE_TYPE, TYPE_TITLE_MAP } from '../public/route/route.domain';
   styleUrls: ['./notes.component.scss']
 })
 export default class NotesComponent {
+  title = TYPE_TITLE_MAP.get(ROUTE_TYPE.NOTES);
   escapeHtml = escapeHtml;
 
   selfCloseDemo = `
@@ -22,5 +23,7 @@ export default class NotesComponent {
   <app-side-bar/>
   `;
 
-  requiredInputsDemo = `@Input({ required: true }) title: string = '';`;
+  requiredInputsDemo = `
+  @Input({ required: true }) title: string = '';
+  `;
 }

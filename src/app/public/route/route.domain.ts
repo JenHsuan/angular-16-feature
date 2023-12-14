@@ -9,7 +9,8 @@ export enum ROUTE_TYPE {
   INPUT_BINDING = 'INPUT_BINDING',
   DESTROY_REF = 'DESTROY_REF',
   BREAKING_CHANGE = 'BREAKING_CHANGE',
-  DEPRECATIONS = 'DEPRECATIONS'
+  DEPRECATIONS = 'DEPRECATIONS',
+  DOCUMENTS = 'DOCUMENTS'
 };
 
 export const ROUTE_MAP = new Map<string, ROUTE_TYPE>([
@@ -23,7 +24,8 @@ export const ROUTE_MAP = new Map<string, ROUTE_TYPE>([
   ['/input-binding', ROUTE_TYPE.INPUT_BINDING],
   ['/destroy-ref', ROUTE_TYPE.DESTROY_REF],
   ['/breaking-changes', ROUTE_TYPE.BREAKING_CHANGE],
-  ['/deprecations', ROUTE_TYPE.DEPRECATIONS]
+  ['/deprecations', ROUTE_TYPE.DEPRECATIONS],
+  ['/documents', ROUTE_TYPE.DOCUMENTS]
 ]);
 
 export const TYPE_TITLE_MAP = new Map<ROUTE_TYPE, string>([
@@ -37,5 +39,6 @@ export const TYPE_TITLE_MAP = new Map<ROUTE_TYPE, string>([
   [ROUTE_TYPE.INPUT_BINDING, 'Router Syntax Improvement - Input Binding'],
   [ROUTE_TYPE.DESTROY_REF, 'Injectable DestroyRef'],
   [ROUTE_TYPE.BREAKING_CHANGE, 'Breaking Changes'],
-  [ROUTE_TYPE.DEPRECATIONS, 'Deprecations']
+  [ROUTE_TYPE.DEPRECATIONS, 'Deprecations'],
+  [ROUTE_TYPE.DOCUMENTS, 'Official Documents']
 ]);
