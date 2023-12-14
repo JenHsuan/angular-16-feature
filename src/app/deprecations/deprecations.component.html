@@ -1,0 +1,77 @@
+<div class="base-container">
+  <div class="title">{{ title }}</div>
+
+  <!-- title -->
+  <app-section-container>
+    <div class="title">1. Class and InjectionToken router guards and resolvers was removed</div>
+    <div class="description-container">
+      <div class="item">
+        Class and InjectionToken-based guards and resolvers are not as configurable,
+        are less re-usable, require more boilerplate, cannot be defined inline with the route,
+        and require more in-depth knowledge of Angular features (Injectable/providers).
+        In short, they're less powerful and more cumbersome. 
+        <a href="https://github.com/angular/angular/pull/47924">(PR)</a>
+      </div>
+      <div class="item">
+        The following code will prompt 
+        <div class="warning">"Warning: implementing guard as injectable services is going to be deprecated in v15.2 and removed in v17"</div>
+      </div>
+      <div>
+        <pre>
+          <code [innerHTML]="escapeHtml(before)"></code>
+        </pre>
+      </div>
+      <div class="item">
+        We can update the code by the folowing way.
+      </div>
+      <div>
+        <pre>
+          <code [innerHTML]="escapeHtml(after)"></code>
+        </pre>
+      </div>
+      <div class="item">
+        Or we can use functional route guard introduced in 
+        <a href="https://verdant-fenglisu-1b7a2d.netlify.app/#/route-guard">Angular v15</a>.
+      </div>
+      <div>
+        <pre>
+          <code [innerHTML]="escapeHtml(newWay)"></code>
+        </pre>
+      </div>
+    </div>
+  </app-section-container>
+
+  <!-- title -->
+  <app-section-container>
+    <div class="title">2. The ripple properties of several Angular Material components were removed</div>
+    <div class="description-container">
+      <div class="item">
+        The ripple property of MatButton, MatCheckbox, MatChip is deprecated. This change moves ripples to being a private implementation detail of the components.
+      </div>
+    </div>
+  </app-section-container>
+
+  <!-- reference -->
+  <app-section-container>
+    <div class="title">2. Reference</div>
+    <div class="content-container">
+      <ul>
+        <li>
+          <a href="https://itnext.io/everything-you-need-to-know-about-route-guard-in-angular-697a062d3198">
+            Everything you need to know about route Guard in Angular
+          </a>
+        </li>
+        <li>
+          <a href="https://stackoverflow.com/questions/52076668/configure-route-guard">
+            Configure Route Guard
+          </a>
+        </li>
+        <li>
+          <a href="https://blog.angular.io/advancements-in-the-angular-router-5d69ec4c032">
+            Advancements in the Angular Router
+          </a>
+        </li>
+      </ul>
+    </div>
+  </app-section-container>
+</div>

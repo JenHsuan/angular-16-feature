@@ -17,10 +17,61 @@
           </li>
           <li>
             In <a href="https://profound-kangaroo-9db0c6.netlify.app/">Angular 13</a>, 
-            the view enginee has been removed. In 16, the Angular Compatibility Compiler (ngcc) has been removed
+            the view enginee has been removed.
+            <div class="item">
+              In 16, the Angular Compatibility Compiler (ngcc) has been removed
+            </div>
+          </li>
+          <li>
+            Updated behavior for <a href="https://angular.io/api/router/Router">Router.createUrlTree</a>
+            <div class="item">
+              By creating the correct URLs, this sometimes resulted in different navigation behavior in the application. 
+              In the following case, the relativeTo property should be removed.
+            </div>
+            <div>
+              <pre>
+                <code [innerHTML]="escapeHtml(navigationExample)"></code>
+              </pre>
+            </div>
+          </li>
+          <li>
+            Angular Package Format changes
+            <div class="item">
+              -> Flattened ESM 2015 (FESM2015) outputs have been removed.
+            </div>
+            <div class="item">
+              -> EcmaScript 2020 outputs have been updated to EcmaScript 2022 (including the flattened output).
+            </div>
+          </li>
+          <li>
+            ReflectiveInjector has been removed. Use Injector.create to create an injector instead.
           </li>
         </ul>
       </div>
+    </div>
+  </app-section-container>
+
+  <!-- reference -->
+  <app-section-container>
+    <div class="title">2. Reference</div>
+    <div class="content-container">
+      <ul>
+        <li>
+          <a href="https://blog.poi.cat/post/introduce-angular-package-format">
+            Angular Package Format 简介
+          </a>
+        </li>
+        <li>
+          <a href="https://docs.google.com/document/d/1CZC2rcpxffTDfRDs6p1cfbmKNLA6x5O-NtkJglDaBVs/preview">
+            Angular Package Format (APF) v12.0
+          </a>
+        </li>
+        <li>
+          <a href="https://angular.io/guide/angular-package-format">
+            Angular package format
+          </a>
+        </li>
+      </ul>
     </div>
   </app-section-container>
 </div>

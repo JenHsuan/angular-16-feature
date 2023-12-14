@@ -8,7 +8,8 @@ export enum ROUTE_TYPE {
   CSP_NONCE = 'CSP_NONCE',
   INPUT_BINDING = 'INPUT_BINDING',
   DESTROY_REF = 'DESTROY_REF',
-  BREAKING_CHANGE = 'BREAKING_CHANGE'
+  BREAKING_CHANGE = 'BREAKING_CHANGE',
+  DEPRECATIONS = 'DEPRECATIONS'
 };
 
 export const ROUTE_MAP = new Map<string, ROUTE_TYPE>([
@@ -21,12 +22,13 @@ export const ROUTE_MAP = new Map<string, ROUTE_TYPE>([
   ['/cspnonce', ROUTE_TYPE.CSP_NONCE],
   ['/input-binding', ROUTE_TYPE.INPUT_BINDING],
   ['/destroy-ref', ROUTE_TYPE.DESTROY_REF],
-  ['/breaking-changes', ROUTE_TYPE.BREAKING_CHANGE]
+  ['/breaking-changes', ROUTE_TYPE.BREAKING_CHANGE],
+  ['/deprecations', ROUTE_TYPE.DEPRECATIONS]
 ]);
 
 export const TYPE_TITLE_MAP = new Map<ROUTE_TYPE, string>([
   [ROUTE_TYPE.HOME, ''],
-  [ROUTE_TYPE.NOTES, 'Notes'],
+  [ROUTE_TYPE.NOTES, 'Other Features'],
   [ROUTE_TYPE.SIGNAL, 'Signal APIs (Developer Preview)'],
   [ROUTE_TYPE.HYDRATION, 'Non-destructive Hydration (Developer Preview)'],
   [ROUTE_TYPE.STANDALONE, 'Enhancements for Standalone API'],
@@ -34,5 +36,6 @@ export const TYPE_TITLE_MAP = new Map<ROUTE_TYPE, string>([
   [ROUTE_TYPE.CSP_NONCE, 'CSP Supports for CSS Inline Styles'],
   [ROUTE_TYPE.INPUT_BINDING, 'Router Syntax Improvement - Input Binding'],
   [ROUTE_TYPE.DESTROY_REF, 'Injectable DestroyRef'],
-  [ROUTE_TYPE.BREAKING_CHANGE, 'Breaking Changes']
+  [ROUTE_TYPE.BREAKING_CHANGE, 'Breaking Changes'],
+  [ROUTE_TYPE.DEPRECATIONS, 'Deprecations']
 ]);

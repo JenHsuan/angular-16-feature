@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 })
 export class SideBarComponent {
   title = 'Notes of Angular v16';
-  updateTime = '2023/12/13';
+  updateTime = '2023/12/14';
   selectedRoute = ROUTE_TYPE.HOME;
   route: string;
 
@@ -24,8 +24,9 @@ export class SideBarComponent {
     ROUTE_TYPE.CSP_NONCE,
     ROUTE_TYPE.INPUT_BINDING,
     ROUTE_TYPE.DESTROY_REF,
+    ROUTE_TYPE.NOTES,
     ROUTE_TYPE.BREAKING_CHANGE,
-    ROUTE_TYPE.NOTES
+    ROUTE_TYPE.DEPRECATIONS
   ];
 
   constructor(
@@ -50,7 +51,7 @@ export class SideBarComponent {
   changeRoute(type: ROUTE_TYPE) {
     const path  = [...ROUTE_MAP.keys()].find(key => type === ROUTE_MAP.get(key));
     if (path) {
-      this.router.navigate([path], );
+      this.router.navigate([path]);
     } 
   }
 

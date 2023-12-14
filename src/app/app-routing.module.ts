@@ -58,6 +58,11 @@ export const routes: Routes = [
     path: 'breaking-changes',
     loadComponent: () => import('../app/breaking-changes/breaking-changes.component'),
     title: 'Angular 16 - breaking changes'
+  },
+  {
+    path: 'deprecations',
+    loadComponent: () => import('../app/deprecations/deprecations.component'),
+    title: 'Angular 16 - deprecations'
   }
 ];
 
