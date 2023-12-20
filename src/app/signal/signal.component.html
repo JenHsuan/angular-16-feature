@@ -37,16 +37,6 @@
           <li>For <b>OnPush</b> + <b>Signal</b>, it'll cause CD on components of branch. Also, it also cause CD on other branches</li>
         </ul>
       </div>
-      <div class="demo-container">
-        <div class="demo">
-          <div class="node-title">root (default)</div>
-          <div class="content">
-            <app-signal-parent></app-signal-parent>
-            <app-push-parent></app-push-parent>
-            <app-default-parent></app-default-parent>
-          </div>
-        </div>
-      </div>
       
       <b>Signal APIs</b>
       <div class="item">
@@ -64,15 +54,40 @@
         </div>
       </div>
     </div>
+    <div class="demo-container">
+      <div class="demo">
+        <div class="node-title">root (default)</div>
+        <div class="content">
+          <app-signal-parent></app-signal-parent>
+          <app-push-parent></app-push-parent>
+          <app-default-parent></app-default-parent>
+        </div>
+      </div>
+    </div>
   </app-section-container>
 
   <!-- content -->
   <app-section-container>
     <div class="title">2. How to use?</div>
     <div class="content-container">
-      <pre>
-        <code [innerHTML]="escapeHtml(code)"></code>
-      </pre>
+      <div>
+        <pre>
+          <code
+            [highlight]="htmlCode"
+            [languages]="['html']"  
+            [lineNumbers]="true"
+          ></code>
+        </pre>  
+      </div>
+      <div>
+        <pre>
+          <code
+            [highlight]="jsCode"
+            [languages]="['typescript']"  
+            [lineNumbers]="true"
+          ></code>
+        </pre>  
+      </div>
     </div>
   </app-section-container>
   

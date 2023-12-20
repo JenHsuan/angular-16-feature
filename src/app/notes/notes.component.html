@@ -12,7 +12,11 @@
       Self-closing tag
       <div>
         <pre>
-          <code [innerHTML]="escapeHtml(selfCloseDemo)"></code>
+          <code 
+          [highlight]="selfCloseDemo"
+          [languages]="['typescript']"  
+          [lineNumbers]="true"
+          ></code>
         </pre>
       </div>
     </li>
@@ -25,7 +29,10 @@
       Required inputs
       <div>
         <pre>
-          <code [innerHTML]="escapeHtml(requiredInputsDemo)"></code>
+          <code 
+          [highlight]="requiredInputsDemo"
+          [languages]="['typescript']"  
+          [lineNumbers]="true"></code>
         </pre>
       </div>
     </li>

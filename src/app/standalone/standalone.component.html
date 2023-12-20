@@ -28,7 +28,11 @@
           </div>
           <div>
             <pre>
-              <code [innerHTML]="escapeHtml(migration)"></code>
+              <code 
+              [highlight]="migration"
+              [languages]="['typescript']"  
+              [lineNumbers]="true"
+            ></code>
             </pre>
           </div>
         </li>
@@ -38,7 +42,11 @@
           </div>
           <div>
             <pre>
-              <code [innerHTML]="escapeHtml(standaloneApp)"></code>
+              <code 
+              [highlight]="standaloneApp"
+              [languages]="['typescript']"  
+              [lineNumbers]="true"
+              ></code>
             </pre>
           </div>
         </li>
@@ -48,7 +56,11 @@
           </div>
           <div>
             <pre>
-              <code [innerHTML]="escapeHtml(ngZone)"></code>
+              <code 
+               [highlight]="ngZone"
+               [languages]="['typescript']"  
+               [lineNumbers]="true"
+              ></code>
             </pre>
           </div>
         </li>
@@ -79,7 +91,11 @@
       </div>
       <div>
         <pre>
-          <code [innerHTML]="escapeHtml(coalescing)"></code>
+          <code 
+          [highlight]="coalescing"
+          [languages]="['typescript']"  
+          [lineNumbers]="true"
+          ></code>
         </pre>
       </div>
     </div>

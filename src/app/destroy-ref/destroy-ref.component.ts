@@ -3,13 +3,13 @@ import { CommonModule } from '@angular/common';
 import { ROUTE_TYPE, TYPE_TITLE_MAP } from '../public/route/route.domain';
 import { SectionContainerComponent } from '../public/section-container/section-container.component';
 import { Subscription, interval } from 'rxjs';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { escapeHtml } from '../public/utils/utils';
+import { HighlightModule } from 'ngx-highlightjs';
 
 @Component({
   selector: 'app-destroy-ref',
   standalone: true,
-  imports: [CommonModule, SectionContainerComponent],
+  imports: [CommonModule, HighlightModule, SectionContainerComponent],
   templateUrl: './destroy-ref.component.html',
   styleUrls: ['./destroy-ref.component.scss']
 })

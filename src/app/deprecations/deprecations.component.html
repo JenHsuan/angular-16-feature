@@ -18,7 +18,10 @@
       </div>
       <div>
         <pre>
-          <code [innerHTML]="escapeHtml(before)"></code>
+          <code 
+          [highlight]="before"
+          [languages]="['typescript']"  
+          [lineNumbers]="true"></code>
         </pre>
       </div>
       <div class="item">
@@ -26,7 +29,10 @@
       </div>
       <div>
         <pre>
-          <code [innerHTML]="escapeHtml(after)"></code>
+          <code 
+          [highlight]="after"
+          [languages]="['typescript']"  
+          [lineNumbers]="true"></code>
         </pre>
       </div>
       <div class="item">
@@ -35,7 +41,10 @@
       </div>
       <div>
         <pre>
-          <code [innerHTML]="escapeHtml(newWay)"></code>
+          <code 
+          [highlight]="newWay"
+          [languages]="['typescript']"  
+          [lineNumbers]="true"></code>
         </pre>
       </div>
     </div>

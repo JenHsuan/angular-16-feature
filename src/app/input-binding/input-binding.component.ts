@@ -4,11 +4,12 @@ import { Router } from '@angular/router';
 import { ROUTE_TYPE, TYPE_TITLE_MAP } from '../public/route/route.domain';
 import { SectionContainerComponent } from '../public/section-container/section-container.component';
 import { escapeHtml } from '../public/utils/utils';
+import { HighlightModule } from 'ngx-highlightjs';
 
 @Component({
   selector: 'app-input-binding',
   standalone: true,
-  imports: [CommonModule, SectionContainerComponent],
+  imports: [CommonModule, HighlightModule, SectionContainerComponent],
   templateUrl: './input-binding.component.html',
   styleUrls: ['./input-binding.component.scss']
 })

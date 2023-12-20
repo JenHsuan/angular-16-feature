@@ -31,7 +31,11 @@
           <div>All content should come from the site's own origin (this excludes subdomains.)</div>
           <div>
             <pre>
-              <code [innerHTML]="escapeHtml(example1)"></code>
+              <code 
+              [highlight]="example1"
+              [languages]="['typescript']"  
+              [lineNumbers]="true"
+              ></code>
             </pre>
           </div>
         </li>
@@ -39,7 +43,11 @@
           <div>Allow users of a web application to include images from any origin in their own content, but to restrict audio or video media to trusted providers, and all scripts only to a specific server that hosts trusted code.</div>
           <div>
             <pre>
-              <code [innerHTML]="escapeHtml(example2)"></code>
+              <code 
+              [highlight]="example2"
+              [languages]="['typescript']"  
+              [lineNumbers]="true"
+              ></code>
             </pre>
           </div>
         </li>
@@ -56,7 +64,11 @@
       </div>
       <div class="item">
         <pre>
-          <code [innerHTML]="escapeHtml(example3)"></code>
+          <code 
+          [highlight]="example3"
+          [languages]="['typescript']"  
+          [lineNumbers]="true"
+          ></code>
         </pre>
       </div>
       <div class="item">
@@ -74,7 +86,10 @@
             <div>Update the header from the index.html with the following lines</div>
             <div>
               <pre>
-                <code [innerHTML]="step1"></code>
+                <code 
+                [highlight]="step1"
+                [languages]="['typescript']"  
+                [lineNumbers]="true"></code>
               </pre>
             </div>
           </li>
@@ -82,7 +97,11 @@
             <div>Update the app-root from the index.html with the following lines</div>
             <div>
               <pre>
-                <code [innerHTML]="step2"></code>
+                <code 
+                [highlight]="step2"
+                [languages]="['typescript']"  
+                [lineNumbers]="true"
+                ></code>
               </pre>
             </div>
           </li>

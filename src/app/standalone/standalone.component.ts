@@ -4,11 +4,12 @@ import { StandaloneParentComponent } from './standalone-parent/standalone-parent
 import { ROUTE_TYPE, TYPE_TITLE_MAP } from '../public/route/route.domain';
 import { SectionContainerComponent } from '../public/section-container/section-container.component';
 import { escapeHtml } from '../public/utils/utils';
+import { HighlightModule } from 'ngx-highlightjs';
 
 @Component({
   selector: 'app-standalone',
   standalone: true,
-  imports: [CommonModule, SectionContainerComponent, StandaloneParentComponent],
+  imports: [CommonModule, HighlightModule, SectionContainerComponent, StandaloneParentComponent],
   templateUrl: './standalone.component.html',
   styleUrls: ['./standalone.component.scss']
 })

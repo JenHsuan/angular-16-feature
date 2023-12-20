@@ -30,7 +30,10 @@
             </div>
             <div>
               <pre>
-                <code [innerHTML]="escapeHtml(navigationExample)"></code>
+                <code 
+                [highlight]="navigationExample"
+                [languages]="['typescript']"  
+                [lineNumbers]="true"></code>
               </pre>
             </div>
           </li>

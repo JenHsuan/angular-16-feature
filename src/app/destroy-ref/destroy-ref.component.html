@@ -11,7 +11,11 @@
       </div>
       <div class="item">
         <pre>
-          <code [innerHTML]="escapeHtml(demo1)"></code>
+          <code 
+          [highlight]="demo1"
+          [languages]="['typescript']"  
+          [lineNumbers]="true"
+          ></code>
         </pre>
       </div>
       <div class="item">
@@ -23,7 +27,11 @@
       </div>
       <div class="item">
         <pre>
-          <code [innerHTML]="escapeHtml(demo2)"></code>
+          <code 
+          [highlight]="demo2"
+          [languages]="['typescript']"  
+          [lineNumbers]="true"
+          ></code>
         </pre>
       </div>
     </div>

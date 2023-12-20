@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { ROUTE_TYPE, TYPE_TITLE_MAP } from '../public/route/route.domain';
 import { escapeHtml } from '../public/utils/utils';
 import { SectionContainerComponent } from '../public/section-container/section-container.component';
+import { HighlightModule } from 'ngx-highlightjs';
 
 @Component({
   selector: 'app-deprecations',
   standalone: true,
-  imports: [CommonModule, SectionContainerComponent],
+  imports: [CommonModule, HighlightModule, SectionContainerComponent],
   templateUrl: './deprecations.component.html',
   styleUrls: ['./deprecations.component.scss']
 })

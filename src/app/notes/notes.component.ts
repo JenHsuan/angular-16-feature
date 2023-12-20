@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { escapeHtml } from '../public/utils/utils';
 import { SectionContainerComponent } from '../public/section-container/section-container.component';
 import { ROUTE_TYPE, TYPE_TITLE_MAP } from '../public/route/route.domain';
+import { HighlightModule } from 'ngx-highlightjs';
 
 @Component({
   selector: 'app-notes',
   standalone: true,
-  imports: [CommonModule, SectionContainerComponent],
+  imports: [CommonModule, HighlightModule, SectionContainerComponent],
   templateUrl: './notes.component.html',
   styleUrls: ['./notes.component.scss']
 })
