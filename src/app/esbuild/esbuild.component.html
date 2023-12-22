@@ -1,21 +1,49 @@
 <div class="base-container">
-  <div class="title">{{ title }}</div>
+  <div class="page-title">{{ title }}</div>
 
   <!-- title -->
 
   <app-section-container>
       <div class="title">1. Description</div>
       <div class="description-container">
-        <div class="item">
-          Angular began to support esbuild from 
-          <a href="https://glistening-cupcake-ead467.netlify.app">
-            Angular v14 (Experimental feature)
-          </a>
-           and
-          <a href="https://verdant-fenglisu-1b7a2d.netlify.app/#/esbuild">
-            Angular v15 (Experimental feature)
-          </a>. 
-        </div>
+        
+      <div class="item">
+        This is a timeline of the esbuild + Vite feature.
+      </div>
+      <ol class="time-line-container">
+        <li class="time-line-item">
+          <div>
+            <div>v14</div>
+            <a href="https://glistening-cupcake-ead467.netlify.app/">
+              Experimental Feature
+            </a>
+          </div>
+        </li>
+        <li class="time-line-item">
+          <div>
+            <div>v15</div>
+            <a href="https://verdant-fenglisu-1b7a2d.netlify.app/#/esbuild">
+              Experimental Feature
+            </a>
+          </div>
+        </li>
+        <li class="time-line-item">
+          <div>
+            <div>v16</div>
+            <a href="https://marvelous-gnome-0802fa.netlify.app/#/esbuild">
+              Developer Preview 
+            </a>
+          </div>
+        </li>
+        <li class="time-line-item">
+          <div>
+            <div>v17</div>
+            <a href="https://chimerical-cocada-121bf6.netlify.app/#/esbuild">
+              Enhancement
+            </a>
+          </div>
+        </li>
+      </ol>
         <div class="item">
           In v16, esbuild enters <b>Developer preview</b> and uses <b>Vite</b> as the dev server with the following benefits. 
           Early tests showed over 72% improvement in cold production builds.

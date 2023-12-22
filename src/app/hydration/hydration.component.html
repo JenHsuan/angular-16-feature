@@ -1,12 +1,12 @@
 <div class="base-container">
-  <div class="title">{{ title }}</div>
+  <div class="page-title">{{ title }}</div>
   
   <!-- title -->
   <app-section-container>
     <div class="title">1. Description</div>
     <div class="description-container">
       <div class="item">
-        Hydration is the trade-off between <a href="https://dev.to/jenhsuan/day-32-of-100daysofcode-the-difference-between-csr-ssr-pre-rendering-and-static-ssr-1f49">CSR ans SSR</a>. Navigation requests like full page loads or reloads are handled by a server that renders the application to HTML, then the JavaScript and data used for rendering is embedded into the resulting document.
+        Hydration is the trade-off between <a href="https://dev.to/jenhsuan/day-32-of-100daysofcode-the-difference-between-csr-ssr-pre-rendering-and-static-ssr-1f49">CSR and SSR</a>. Navigation requests like full page loads or reloads are handled by a server that renders the application to HTML, then the JavaScript and data used for rendering is embedded into the resulting document.
       </div>
       <div class="item">
         <b>There are two types of hydrations.</b>
@@ -33,6 +33,27 @@
       <div>
         reference: <a href="">Google blog</a>
       </div>
+      <div class="item">
+        This is a timeline of the non-destructive hydration.
+      </div>
+      <ol class="time-line-container">
+        <li class="time-line-item">
+          <div>
+            <div>v16</div>
+            <a href="https://marvelous-gnome-0802fa.netlify.app/#/hydration">
+              Developer Preview
+            </a>
+          </div>
+        </li>
+        <li class="time-line-item">
+          <div>
+            <div>v17</div>
+            <a href="https://chimerical-cocada-121bf6.netlify.app/#/hydration">
+              Stable
+            </a>
+          </div>
+        </li>
+      </ol>
     </div>
   </app-section-container>
 
@@ -72,7 +93,8 @@
                 <code 
                 [highlight]="step3"
                 [languages]="['typescript']"  
-                [lineNumbers]="true"></code>
+                [lineNumbers]="true"
+                ></code>
               </pre>
             </div>
           </li>

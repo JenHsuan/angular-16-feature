@@ -34,7 +34,7 @@ export const TYPE_TITLE_MAP = new Map<ROUTE_TYPE, string>([
   [ROUTE_TYPE.SIGNAL, 'Signal APIs (Developer Preview)'],
   [ROUTE_TYPE.HYDRATION, 'Non-destructive Hydration (Developer Preview)'],
   [ROUTE_TYPE.STANDALONE, 'Enhancements for Standalone API'],
-  [ROUTE_TYPE.ESBUILD, 'esbuild Supported on the ng build (Developer Preview)'],
+  [ROUTE_TYPE.ESBUILD, 'esbuild Supported + Vite (Developer Preview)'],
   [ROUTE_TYPE.CSP_NONCE, 'CSP Supports for CSS Inline Styles'],
   [ROUTE_TYPE.INPUT_BINDING, 'Router Syntax Improvement - Input Binding'],
   [ROUTE_TYPE.DESTROY_REF, 'Injectable DestroyRef'],
